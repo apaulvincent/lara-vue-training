@@ -12,8 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+
+Route::get('/shared-state', function () {
+    return view('shared-state');
+});
+
+
+Route::get('/custom-input-components', function () {
+    return view('custom-input-components');
+});
+
 
 Route::get('/skills', function () {
     return ['Laravel', 'Vue'];

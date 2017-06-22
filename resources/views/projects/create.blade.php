@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+    <link rel="stylesheet" href="/css/app.css">
     <style>body { padding-top: 40px; }</style>
 </head>
 

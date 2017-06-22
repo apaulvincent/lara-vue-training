@@ -10,13 +10,16 @@
     <body>
 
         <div id="app">
-            <ul>
-                <li v-for="skill in skills">@{{ skill }}</li>
-            </ul>
         </div>
 
-        <script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <div id="one">
+            @{{name}}
+        </div>
+
+        <div id="two">
+            @{{name}}
+        </div>
+
         <script src="/js/app.js"></script>
 
     </body>

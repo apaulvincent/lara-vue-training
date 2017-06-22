@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 43);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -738,61 +738,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Errors = function () {
-    function Errors() {
-        _classCallCheck(this, Errors);
-
-        this.errors = {};
-    }
-
-    _createClass(Errors, [{
-        key: "get",
-        value: function get(field) {
-            if (this.errors[field]) {
-                return this.errors[field][0];
-            }
-        }
-    }, {
-        key: "record",
-        value: function record(err) {
-            this.errors = err;
-        }
-    }, {
-        key: "clear",
-        value: function clear(field) {
-
-            if (field) {
-                delete this.errors[field];
-                return;
-            }
-            this.errors = {};
-        }
-    }, {
-        key: "has",
-        value: function has(field) {
-            return this.errors.hasOwnProperty(field);
-        }
-    }, {
-        key: "any",
-        value: function any() {
-            return Object.keys(this.errors).length > 0;
-        }
-    }]);
-
-    return Errors;
-}();
-
-/* harmony default export */ __webpack_exports__["a"] = (Errors);
-
-/***/ }),
+/* 7 */,
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1634,122 +1580,9 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 26 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            message: 'Hello John!'
-        };
-    }
-});
-
-/***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Errors__ = __webpack_require__(7);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-var Form = function () {
-    function Form(data) {
-        _classCallCheck(this, Form);
-
-        /**
-         * keep original data for later use.
-         */
-
-        this.originalData = data;
-
-        for (var field in data) {
-            this[field] = data[field];
-        }
-
-        this.errors = new __WEBPACK_IMPORTED_MODULE_0__Errors__["a" /* default */]();
-    }
-
-    _createClass(Form, [{
-        key: 'reset',
-        value: function reset() {
-            for (var field in this.originalData) {
-                this[field] = '';
-            }
-
-            this.errors.clear();
-        }
-    }, {
-        key: 'data',
-        value: function data() {
-
-            var data = {};
-
-            for (var property in this.originalData) {
-                data[property] = this[property];
-            }
-
-            return data;
-        }
-    }, {
-        key: 'submit',
-        value: function submit(requestType, url) {
-            var _this = this;
-
-            return new Promise(function (resolve, reject) {
-
-                axios[requestType](url, _this.data()).then(function (response) {
-                    _this.onSuccess(response.data);
-
-                    resolve(response);
-                }).catch(function (error) {
-                    _this.onFail(error.response.data);
-
-                    reject(error.response.data);
-                });
-            });
-        }
-    }, {
-        key: 'onSuccess',
-        value: function onSuccess(data) {
-
-            alert(data.message);
-
-            this.reset();
-        }
-    }, {
-        key: 'onFail',
-        value: function onFail(err) {
-            this.errors.record(err);
-        }
-    }]);
-
-    return Form;
-}();
-
-/* harmony default export */ __webpack_exports__["a"] = (Form);
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(29)();
-exports.push([module.i, "\n.noti {\n  background: blue;\n}\n.noti h3 {\n    color: #fff;\n}\n", ""]);
-
-/***/ }),
+/* 26 */,
+/* 27 */,
+/* 28 */,
 /* 29 */
 /***/ (function(module, exports) {
 
@@ -1996,44 +1829,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(34)
-
-var Component = __webpack_require__(32)(
-  /* script */
-  __webpack_require__(26),
-  /* template */
-  __webpack_require__(33),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\Users\\BeMedia\\Desktop\\vue-app\\resources\\assets\\js\\components\\Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5e416350", Component.options)
-  } else {
-    hotAPI.reload("data-v-5e416350", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 31 */,
 /* 32 */
 /***/ (function(module, exports) {
 
@@ -2091,49 +1887,8 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "noti"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.message))])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5e416350", module.exports)
-  }
-}
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(28);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(35)("70661f5c", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5e416350\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-5e416350\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Example.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 33 */,
+/* 34 */,
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12114,7 +11869,8 @@ module.exports = g;
 
 
 /***/ }),
-/* 39 */
+/* 39 */,
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12123,14 +11879,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_Form__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_Errors__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Example__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Example___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_Example__);
-
-
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Coupon__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Coupon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Coupon__);
 
 
 
@@ -12141,65 +11891,156 @@ window.axios = __WEBPACK_IMPORTED_MODULE_1_axios___default.a;
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
     components: {
-        Example: __WEBPACK_IMPORTED_MODULE_4__components_Example___default.a
+        Coupon: __WEBPACK_IMPORTED_MODULE_2__components_Coupon___default.a
     },
     data: {
-        skills: [],
-        form: new __WEBPACK_IMPORTED_MODULE_2__core_Form__["a" /* default */]({
-            name: '',
-            description: ''
-        })
+        coupon: 'FREEBIE'
     },
-    methods: {
-        onSubmit: function onSubmit() {
-            this.form.submit('post', '/projects').then(function (data) {
-                return console.log(data);
-            }).catch(function (errors) {
-                return console.log(errors);
-            });
-        }
-    },
-    mounted: function mounted() {
-        var _this = this;
+    methods: {},
+    mounted: function mounted() {}
+});
 
-        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/skills').then(function (response) {
-            return _this.skills = response.data;
-        });
+/***/ }),
+/* 41 */,
+/* 42 */,
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(40);
+
+
+/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['code'],
+    data: function data() {
+        return {
+            coupon: 'Hello John!'
+        };
+    },
+
+    methods: {
+        updateCode: function updateCode(code) {
+            this.$emit('input', code);
+        }
     }
 });
 
-// Shared State
-
-var store = {
-    name: 'Mike'
-};
-
-new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#one',
-    data: store
-
-});
-
-new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#two',
-    data: store
-
-});
-
 /***/ }),
-/* 40 */,
-/* 41 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 42 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(39);
-module.exports = __webpack_require__(41);
+exports = module.exports = __webpack_require__(29)();
+exports.push([module.i, "", ""]);
 
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(55)
+
+var Component = __webpack_require__(32)(
+  /* script */
+  __webpack_require__(51),
+  /* template */
+  __webpack_require__(54),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "C:\\Users\\BeMedia\\Desktop\\vue-app\\resources\\assets\\js\\components\\Coupon.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Coupon.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-057475a8", Component.options)
+  } else {
+    hotAPI.reload("data-v-057475a8", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('input', {
+    attrs: {
+      "type": "text"
+    },
+    domProps: {
+      "value": _vm.code
+    },
+    on: {
+      "input": function($event) {
+        _vm.updateCode($event.target.value)
+      }
+    }
+  })])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-057475a8", module.exports)
+  }
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(52);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(35)("0fa0ae84", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-057475a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Coupon.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-057475a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Coupon.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
