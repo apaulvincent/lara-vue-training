@@ -34,4 +34,16 @@ class ProjectsController extends Controller
 
         return ['message' => 'Project Created!'];
     }
+
+
+    public function show()
+    {
+        return Project::all();
+    }
+
+    public function delete($id)
+    {
+        $proj = Project::find($id);    
+        $proj->delete();
+    }   
 }

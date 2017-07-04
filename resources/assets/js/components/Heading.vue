@@ -8,7 +8,7 @@
     export default {
         data() {
             return {
-                message: 'Hello John!'
+                message: 'Project List'
             }
         }
     }
@@ -16,11 +16,4 @@
 
 
 <style lang="scss">
-    .noti {
-        background: blue;
-
-        h3 {
-            color: #fff;
-        }
-    }
 </style>

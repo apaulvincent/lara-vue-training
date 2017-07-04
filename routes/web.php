@@ -15,21 +15,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('/shared-state', function () {
     return view('shared-state');
 });
-
 
 Route::get('/custom-input-components', function () {
     return view('custom-input-components');
 });
 
 
-Route::get('/skills', function () {
-    return ['Laravel', 'Vue'];
-});
-
-
 Route::get('projects/create', 'ProjectsController@create');
-Route::post('projects', 'ProjectsController@store');
+
+Route::get('/projects', 'ProjectsController@show');
+Route::post('/projects', 'ProjectsController@store');
+
+Route::delete('/projects/{id}', 'ProjectsController@delete');

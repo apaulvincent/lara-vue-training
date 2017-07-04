@@ -13,7 +13,7 @@
             {{-- <input type="text" v-model="coupon" /> --}}
             {{-- <input type="text" :value="coupon" @input="coupon = $event.target.value" /> --}}
 
-            <coupon v-model="coupon"/>
+            <coupon v-model="coupon" code="GL"/>
         </div>
 
         <script src="/js/custom-input-components.js"></script>

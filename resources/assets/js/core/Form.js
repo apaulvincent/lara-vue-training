@@ -56,7 +56,7 @@ class Form {
 
     onSuccess(data) {
 
-        alert(data.message)
+        // alert(data.message)
 
         this.reset();
     }

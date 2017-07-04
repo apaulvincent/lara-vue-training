@@ -1,6 +1,6 @@
 <template>
    <div>
-       <input type="text" :value="code" @input="updateCode($event.target.value)"/>
+       <input type="text" :value="code" @input="updateCode($event.target.value)">
    </div>
 </template>
 
