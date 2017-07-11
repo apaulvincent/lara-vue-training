@@ -12,16 +12,16 @@
 <div class="panel">
 	<div class="panel-body" v-for="project in projects">
 		
+			<h4 v-if="!isEditable">@{{ project.name }}</h4>
+			<input type="text" :value="project.name" v-else class="form-control"> 
+			
+			<p v-if="!isEditable">@{{ project.description }}</p>
+			<textarea :value="project.description" v-else class="form-control"></textarea>
 
-		<h4 v-if="!isEditable">@{{ project.name }}</h4>
-		<input type="text" :value="project.name" v-else class="form-control"> 
-		
-		<p v-if="!isEditable">@{{ project.description }}</p>
-		<textarea :value="project.description" v-else class="form-control"></textarea>
+			<button v-if="!isEditable" @click="editProject(project)">E</button>
+			<button v-else @click="updateProject(project)">U</button>
 
-		<button v-if="!isEditable" @click="editProject(project)">E</button>
-		<button v-else @click="updateProject(project)">U</button>
+			<button @click="deleteProject(project)">D</button>
 
-		<button @click="deleteProject(project)">D</button>
 	</div>
 </div>

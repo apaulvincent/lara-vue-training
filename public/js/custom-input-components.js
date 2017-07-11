@@ -11951,7 +11951,7 @@ var Component = __webpack_require__(27)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Projects\\Personal\\lara-vue-training\\resources\\assets\\js\\components\\Coupon.vue"
+Component.options.__file = "D:\\Projects\\__Personal\\lara-vue-training\\resources\\assets\\js\\components\\Coupon.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Coupon.vue: functional components are not supported with templates, they should use render functions.")}
 

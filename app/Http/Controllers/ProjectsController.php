@@ -35,6 +35,11 @@ class ProjectsController extends Controller
         return ['message' => 'Project Created!'];
     }
 
+    public function update()
+    {
+        
+    }
+
 
     public function show()
     {

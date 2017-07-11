@@ -49,8 +49,8 @@ new Vue({
         editProject(project) {
             this.isEditable = true
         },
-        updateProject () {
-
+        updateProject() {
+            axios.post('/projects')
             this.isEditable = false
         }
     },  

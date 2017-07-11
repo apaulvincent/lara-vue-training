@@ -29,4 +29,6 @@ Route::get('projects/create', 'ProjectsController@create');
 Route::get('/projects', 'ProjectsController@show');
 Route::post('/projects', 'ProjectsController@store');
 
+Route::post('/projects/{id}', 'ProjectsController@update');
+
 Route::delete('/projects/{id}', 'ProjectsController@delete');
